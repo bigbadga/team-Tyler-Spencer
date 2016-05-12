@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mansion;
 
 import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
+import byui.cit260.mansion.model.Character;
 
 /**
  *
@@ -25,14 +21,22 @@ public class Mansion {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
-    
-    
-      Item gun=new Item();  
+        
+        Character characterOne = new Character();
+        
+        characterOne.setName("Jake");
+        characterOne.setDescription("Main Character");
+        characterOne.setCoordinates(12);
+        
+        String characterInfo = characterOne.toString();
+        System.out.println(characterInfo);
+        
+        Item gun=new Item();  
       gun.setItemName("Big gun");
       gun.setDescription("It is a very huge gun.");
       gun.setContent("NOT APPLICABLE  ");
       String guninfo = gun.toString();
         System.out.println(guninfo);
     }
-    }
-
+          
+}
