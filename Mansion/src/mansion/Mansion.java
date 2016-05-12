@@ -30,7 +30,7 @@ public class Mansion {
       Item gun=new Item();  
       gun.setItemName("Big gun");
       gun.setDescription("It is a very huge gun.");
-      gun.setContent("  ");
+      gun.setContent("NOT APPLICABLE  ");
       String guninfo = gun.toString();
         System.out.println(guninfo);
     }
