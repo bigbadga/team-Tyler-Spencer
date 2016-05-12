@@ -1,4 +1,3 @@
-
 package byui.cit260.mansion.model;
 
 import java.io.Serializable;

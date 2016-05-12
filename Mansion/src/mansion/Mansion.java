@@ -32,10 +32,10 @@ public class Mansion {
         System.out.println(characterInfo);
         
         Item gun=new Item();  
-      gun.setItemName("Big gun");
-      gun.setDescription("It is a very huge gun.");
-      gun.setContent("  ");
-      String guninfo = gun.toString();
+        gun.setItemName("Big gun");
+        gun.setDescription("It is a very huge gun.");
+        gun.setContent("  ");
+        String guninfo = gun.toString();
         System.out.println(guninfo);
     }
           
