@@ -1,5 +1,6 @@
 package mansion;
 
+import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
 import byui.cit260.mansion.model.Character;
 
@@ -29,6 +30,13 @@ public class Mansion {
         
         String characterInfo = characterOne.toString();
         System.out.println(characterInfo);
+        
+        Item gun=new Item();  
+      gun.setItemName("Big gun");
+      gun.setDescription("It is a very huge gun.");
+      gun.setContent("  ");
+      String guninfo = gun.toString();
+        System.out.println(guninfo);
     }
           
 }
