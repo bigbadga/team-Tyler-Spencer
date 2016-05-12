@@ -1,8 +1,11 @@
 package mansion;
 
+import byui.cit260.mansion.model.Backpack;
 import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
 import byui.cit260.mansion.model.Character;
+import byui.cit260.mansion.model.Clue;
+import javafx.scene.Scene;
 
 /**
  *
@@ -37,6 +40,23 @@ public class Mansion {
       gun.setContent("NOT APPLICABLE  ");
       String guninfo = gun.toString();
         System.out.println(guninfo);
+        
+        Clue file1=new Clue();
+        file1.setClueName("tony's file");
+        file1.setContent("He might be the murderer.");
+        String file01=file1.toString();
+        System.out.println(file01);
+        
+        Backpack big=new Backpack();
+        big.setItemAomunt(1);
+        String big1=big.toString();
+        System.out.println(""+big1);
+        
+        Scene door=new Scene();
+        door.setDescription("It is a black door");
+        String dr1=door.toString();
+        System.out.println(dr1);
+        
     }
           
 }
