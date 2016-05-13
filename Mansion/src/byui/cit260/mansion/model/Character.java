@@ -12,7 +12,8 @@ public class Character implements Serializable {
    //Class instance variables
     private String name;
     private String description;
-    private Integer coordinates;
+    private Integer columnCoordinate;
+    private Integer rowCoordinate;
 
     public Character() {
     }
@@ -33,20 +34,29 @@ public class Character implements Serializable {
         this.description = description;
     }
 
-    public Integer getCoordinates() {
-        return coordinates;
+    public Integer getColumnCoordinate() {
+        return columnCoordinate;
     }
 
-    public void setCoordinates(Integer coordinates) {
-        this.coordinates = coordinates;
+    public void setColumnCoordinate(Integer columnCoordinate) {
+        this.columnCoordinate = columnCoordinate;
+    }
+
+    public Integer getRowCoordinate() {
+        return rowCoordinate;
+    }
+
+    public void setRowCoordinate(Integer rowCoordinate) {
+        this.rowCoordinate = rowCoordinate;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash + Objects.hashCode(this.name);
-        hash = 11 * hash + Objects.hashCode(this.description);
-        hash = 11 * hash + Objects.hashCode(this.coordinates);
+        hash = 67 * hash + Objects.hashCode(this.name);
+        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 67 * hash + Objects.hashCode(this.columnCoordinate);
+        hash = 67 * hash + Objects.hashCode(this.rowCoordinate);
         return hash;
     }
 
@@ -68,7 +78,10 @@ public class Character implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.coordinates, other.coordinates)) {
+        if (!Objects.equals(this.columnCoordinate, other.columnCoordinate)) {
+            return false;
+        }
+        if (!Objects.equals(this.rowCoordinate, other.rowCoordinate)) {
             return false;
         }
         return true;
@@ -76,8 +89,8 @@ public class Character implements Serializable {
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+        return "Character{" + "name=" + name + ", description=" + description + ", columnCoordinate=" + columnCoordinate + ", rowCoordinate=" + rowCoordinate + '}';
     }
 
-   
+    
 }
