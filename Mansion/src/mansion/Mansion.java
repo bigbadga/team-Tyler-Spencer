@@ -35,8 +35,8 @@ public class Mansion {
         gun.setItemName("Big gun");
         gun.setDescription("It is a very huge gun.");
         gun.setContent("  ");
-        String guninfo = gun.toString();
-        System.out.println(guninfo);
+        String gunInfo = gun.toString();
+        System.out.println(gunInfo);
     }
           
 }
