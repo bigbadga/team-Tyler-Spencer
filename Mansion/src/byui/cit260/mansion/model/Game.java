@@ -8,6 +8,9 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double startTime;
     private double endTime;
+
+      
+
     private double totalTime;
 
     public Game() {

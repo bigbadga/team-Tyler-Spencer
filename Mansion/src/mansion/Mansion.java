@@ -4,8 +4,14 @@ import byui.cit260.mansion.model.Backpack;
 import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
 import byui.cit260.mansion.model.Character;
+
 import byui.cit260.mansion.model.Clue;
 import byui.cit260.mansion.model.Scene;
+
+import byui.cit260.mansion.model.Game;
+import byui.cit260.mansion.model.Location;
+import byui.cit260.mansion.model.Map;
+
 
 /**
  *
@@ -29,11 +35,13 @@ public class Mansion {
         
         characterOne.setName("Jake");
         characterOne.setDescription("Main Character");
-        characterOne.setCoordinates(12);
+        characterOne.setColumnCoordinate(7);
+        characterOne.setRowCoordinate(5);
         
         String characterInfo = characterOne.toString();
         System.out.println(characterInfo);
         
+
         Item gun=new Item();  
 
       gun.setItemName("Big gun");
@@ -59,6 +67,38 @@ public class Mansion {
         door.setDescription("It is a black door");
         String dr1=door.toString();
         System.out.println(dr1);
+
+      
+        
+        String itemInfo = gun.toString();
+        System.out.println(itemInfo);
+        
+        Game murderAtTheMansion = new Game();
+        
+        murderAtTheMansion.setStartTime(0);
+        murderAtTheMansion.setEndTime(35.00);
+        
+        String gameInfo = murderAtTheMansion.toString();
+        System.out.println(gameInfo);
+        
+        Map gameMap = new Map();
+        
+        gameMap.setNumberOfRows(10);
+        gameMap.setNumberOfColumns(10);
+        
+        String mapInfo = gameMap.toString();
+        System.out.println(mapInfo);
+        
+        Location currentLocation = new Location();
+        
+        currentLocation.setDescription("This is an empty room");
+        currentLocation.setRow(5);
+        currentLocation.setColumn(7);
+        
+        String locationInfo = currentLocation.toString();
+        System.out.println(locationInfo);
+        
+
         
     }
           
