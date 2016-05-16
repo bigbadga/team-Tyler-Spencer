@@ -5,7 +5,7 @@ import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
 import byui.cit260.mansion.model.Character;
 import byui.cit260.mansion.model.Clue;
-import javafx.scene.Scene;
+import byui.cit260.mansion.model.Scene;
 
 /**
  *
@@ -35,11 +35,14 @@ public class Mansion {
         System.out.println(characterInfo);
         
         Item gun=new Item();  
+
       gun.setItemName("Big gun");
       gun.setDescription("It is a very huge gun.");
       gun.setContent("NOT APPLICABLE  ");
       String guninfo = gun.toString();
-        System.out.println(guninfo);
+       System.out.println(guninfo);
+
+        
         
         Clue file1=new Clue();
         file1.setClueName("tony's file");
