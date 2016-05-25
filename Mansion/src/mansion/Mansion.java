@@ -4,10 +4,8 @@ import byui.cit260.mansion.model.Backpack;
 import byui.cit260.mansion.model.Item;
 import byui.cit260.mansion.model.Player;
 import byui.cit260.mansion.model.Character;
-
 import byui.cit260.mansion.model.Clue;
 import byui.cit260.mansion.model.Scene;
-
 import byui.cit260.mansion.model.Game;
 import byui.cit260.mansion.model.Location;
 import byui.cit260.mansion.model.Map;
@@ -31,6 +29,7 @@ public class Mansion {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        
         Character characterOne = new Character();
         
         characterOne.setName("Jake");
@@ -42,36 +41,40 @@ public class Mansion {
         System.out.println(characterInfo);
         
 
-        Item gun=new Item();  
+        Item gun = new Item();  
 
-      gun.setItemName("Big gun");
-      gun.setDescription("It is a very huge gun.");
-      gun.setContent("NOT APPLICABLE  ");
-      String guninfo = gun.toString();
-       System.out.println(guninfo);
+        gun.setItemName("Big gun");
+        gun.setDescription("It is a very big gun.");
+        gun.setContent("NOT APPLICABLE");
+        
+        String guninfo = gun.toString();
+        System.out.println(guninfo);
 
-        
-        
+           
         Clue file1=new Clue();
+        
         file1.setClueName("tony's file");
         file1.setContent("He might be the murderer.");
-        String file01=file1.toString();
-        System.out.println(file01);
+        
+        String clueInfo = file1.toString();
+        System.out.println(clueInfo);
+       
         
         Backpack big=new Backpack();
-        big.setItemAomunt(1);
+        
+        big.setItemAmount(1);
+        
         String big1=big.toString();
         System.out.println(""+big1);
         
+        
         Scene door=new Scene();
+        
         door.setDescription("It is a black door");
+        
         String dr1=door.toString();
         System.out.println(dr1);
 
-      
-        
-        String itemInfo = gun.toString();
-        System.out.println(itemInfo);
         
         Game murderAtTheMansion = new Game();
         
@@ -81,6 +84,7 @@ public class Mansion {
         String gameInfo = murderAtTheMansion.toString();
         System.out.println(gameInfo);
         
+        
         Map gameMap = new Map();
         
         gameMap.setNumberOfRows(10);
@@ -88,6 +92,7 @@ public class Mansion {
         
         String mapInfo = gameMap.toString();
         System.out.println(mapInfo);
+        
         
         Location currentLocation = new Location();
         
@@ -97,9 +102,7 @@ public class Mansion {
         
         String locationInfo = currentLocation.toString();
         System.out.println(locationInfo);
-        
-
-        
+             
     }
           
 }

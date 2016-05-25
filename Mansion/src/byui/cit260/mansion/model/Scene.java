@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mansion.model;
 
 import java.io.Serializable;
@@ -15,7 +10,7 @@ public class Scene implements Serializable{
     private String description;
     private String item;
     private String clue;
-    private String blockedroom;
+    private String blockedRoom;
 
     public Scene() {
     }
@@ -44,12 +39,12 @@ public class Scene implements Serializable{
         this.clue = clue;
     }
 
-    public String getBlockedroom() {
-        return blockedroom;
+    public String getBlockedRoom() {
+        return blockedRoom;
     }
 
     public void setBlockedroom(String blockedroom) {
-        this.blockedroom = blockedroom;
+        this.blockedRoom = blockedroom;
     }
 
     @Override
@@ -58,7 +53,7 @@ public class Scene implements Serializable{
         hash = 79 * hash + Objects.hashCode(this.description);
         hash = 79 * hash + Objects.hashCode(this.item);
         hash = 79 * hash + Objects.hashCode(this.clue);
-        hash = 79 * hash + Objects.hashCode(this.blockedroom);
+        hash = 79 * hash + Objects.hashCode(this.blockedRoom);
         return hash;
     }
 
@@ -83,7 +78,7 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.clue, other.clue)) {
             return false;
         }
-        if (!Objects.equals(this.blockedroom, other.blockedroom)) {
+        if (!Objects.equals(this.blockedRoom, other.blockedRoom)) {
             return false;
         }
         return true;
@@ -91,7 +86,7 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", item=" + item + ", clue=" + clue + ", blockedroom=" + blockedroom + '}';
+        return "Scene{" + "description=" + description + ", item=" + item + ", clue=" + clue + ", blockedRoom=" + blockedRoom + '}';
     }
     
 }
