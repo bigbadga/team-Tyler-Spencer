@@ -83,5 +83,54 @@ public class BackpackControlTest {
         result = instance.calcAmountOfRain(sumLY, seasonRain);
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Test of calcTimeOfDeath method, of class BackpackControl.
+     */
+    @Test
+    public void testCalcTimeOfDeath() {
+        System.out.println("calcTimeOfDeath1");
+        double earliestTime = 20;
+        double latestTime = 23;
+        BackpackControl instance = new BackpackControl();
+        double expResult = 3;
+        double result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("calcTimeOfDeath2");
+        earliestTime = -1;
+        latestTime = 23;
+        expResult = -1;
+        result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("calcTimeOfDeath3");
+        earliestTime = 20;
+        latestTime = -1;
+        expResult = -1;
+        result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("calcTimeOfDeath4");
+        earliestTime = 20;
+        latestTime = 25;
+        expResult = -1;
+        result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("calcTimeOfDeath5");
+        earliestTime = 0;
+        latestTime = 24;
+        expResult = 24;
+        result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("calcTimeOfDeath6");
+        earliestTime = 18;
+        latestTime = 24;
+        expResult = 6;
+        result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        assertEquals(expResult, result, 0.0);
+    }
     
 }
