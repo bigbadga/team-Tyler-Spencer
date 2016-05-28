@@ -132,5 +132,74 @@ public class BackpackControlTest {
         result = instance.calcTimeOfDeath(earliestTime, latestTime);
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Test of calcAge method, of class BackpackControl.
+     */
+    @Test
+    public void testCalcAge() {
+        System.out.println("calcAge");
+        int birthdayYear = 81;
+        int yearOfCountry = 1911;
+        BackpackControl instance = new BackpackControl();
+        int expResult = 24;
+        int result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+        
+        System.out.println("agetestcase2");
+        birthdayYear = 0;
+        yearOfCountry = 1911;
+        expResult = -1;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+        System.out.println("agetestcase3");
+        birthdayYear = 81;
+        yearOfCountry = 0;
+        expResult = -1;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+       
+        System.out.println("agetestcase4");
+        birthdayYear = 1100;
+        yearOfCountry = 1911;
+        expResult = -1;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+       
+        System.out.println("agetestcase5");
+        birthdayYear = 1;
+        yearOfCountry = 2010;
+        expResult = 5;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+       
+       
+          System.out.println("agetestcase6");
+        birthdayYear = 100;
+        yearOfCountry = 1900;
+        expResult = 16;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+       
+        System.out.println("agetestcase7");
+        birthdayYear = 1;
+        yearOfCountry = 1900;
+        expResult = 115;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+       
+       
+        System.out.println("agetestcase8");
+        birthdayYear = 100;
+        yearOfCountry = 2010;
+        expResult = -1;
+        result = instance.calcAge(birthdayYear, yearOfCountry);
+        assertEquals(expResult, result);
+    }
     
 }
