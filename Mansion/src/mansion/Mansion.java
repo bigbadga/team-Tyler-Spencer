@@ -26,6 +26,8 @@ public class Mansion {
     private static Player player = null;
     
     public static void main(String[] args) {
+        
+        // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
              

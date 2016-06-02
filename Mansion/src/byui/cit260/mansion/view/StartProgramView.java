@@ -14,6 +14,7 @@ public class StartProgramView {
     
     public StartProgramView() {
         this.promptMessage = "\nPlease enter your name: ";
+        // display the banner when view is created
         this.displayBanner();
     }
 
@@ -38,39 +39,44 @@ public class StartProgramView {
               + "\n************************************************************"
               );
     }
-
+    /**
+     * displays the start program view
+     */
     public void displayStartProgramView() {
-        boolean done = false;
+        
+        boolean done = false; // set flag to none
         do {
+            // prompt for and get players name
             String playersName = this.getPlayersName();
-            if(playersName.toUpperCase().equals("Q"))
-                return;
+            if(playersName.toUpperCase().equals("Q")) // user wants to quit
+                return; // exit the game
             
+            // do the requested action and display the next view
             done = this.doAction(playersName);
             
         } while(!done);
     }
 
     private String getPlayersName() {
-       Scanner keyboard = new Scanner(System.in);
-       String value = "";
-       boolean valid = false;
+       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       String value = ""; // value to be returned
+       boolean valid = false; // initialize to not valid
        
-       while (!valid) {
+       while (!valid) { // loop while an invalid value is enter
            System.out.println("\n" + this.promptMessage);
            
-           value = keyboard.nextLine();
-           value = value.trim();
+           value = keyboard.nextLine(); // get next Line typed on keyboard
+           value = value.trim(); // trim off leading and trailing blanks
            
-           if(value.length() < 1) {
+           if(value.length() < 1) { // value is blank
                System.out.println("\nInvalid value: value can not be blank");
                continue;
            }
            
-           break;
+           break; // end the loop
        }
        
-       return value;
+       return value; //return the value entered
     }
 
     private boolean doAction(String playersName) {
@@ -79,9 +85,11 @@ public class StartProgramView {
                     + "The name must be greater than one character in length");
             return false;
         }
+        
+        // call createPlayer() control function
         Player player = GameControl.createPlayer(playersName);
         
-        if (player == null) {
+        if (player == null) { // if unsuccessful
             System.out.println("\nError creating the player.");
             return false;
         }
@@ -90,13 +98,18 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
+        
+        // display a custom welcome message
         System.out.println("\n==============================================="
                          + "\n Welcome to the game " + player.getName()
                          + "\n We hope you have a lot of fun!"
                          + "\n==============================================="
                          );
+        
+        // Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
                 
+        // Display the main menu view
         mainMenuView.displayMainMenuView();
     }
     

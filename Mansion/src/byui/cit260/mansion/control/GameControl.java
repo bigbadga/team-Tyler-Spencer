@@ -17,9 +17,13 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
         
-        Mansion.setPlayer(player);
+        Mansion.setPlayer(player); // save the player
         
         return player;
+    }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function called ***");
     }
     
 }

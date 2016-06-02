@@ -1,11 +1,15 @@
 package byui.cit260.mansion.view;
 
+import mansion.Mansion;
+import byui.cit260.mansion.control.GameControl;
+
 /**
  *
  * @author tylerbadger
  */
 public class MainMenuView {
     private String menu;
+    
     public MainMenuView(){
     this.menu = "\n"
               + "\n------------------------------------------------------------"
@@ -18,18 +22,23 @@ public class MainMenuView {
               + "\nQ - Quit"
               + "\n------------------------------------------------------------";
     }
-public void displayMainMenuView() {
+    /**
+     * displays the start program view
+     */
+    public void displayMainMenuView() {
         
-        boolean done = false;
+        boolean done = false; // set flag to not done
         do {
-            
+            // prompt for and get players name
             String menuOption = this.getMenuOption();
-            if(menuOption.toUpperCase().equals("Q"))
-                return;
+            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
+                return; //exit the game
             
+            // do thte requested action and display the next view
             done = this.doAction(menuOption);
             
         } while (!done);
+        
     }
 
     private String getMenuOption() {
@@ -63,7 +72,12 @@ public void displayMainMenuView() {
     }
 
     private void startNewGame() {
-        System.out.println("\n*** startNewGame() function called ***");
+        // create a new game
+        GameControl.createNewGame(Mansion.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
