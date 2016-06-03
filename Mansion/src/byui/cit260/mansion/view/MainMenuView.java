@@ -99,7 +99,7 @@ public class MainMenuView {
     }
 
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame called");
+        System.out.println("\n*** startExistingGame called ***");
     }
 
     private void displayHelpMenu() {
@@ -108,7 +108,6 @@ public class MainMenuView {
     }
 
     private void saveGame() {
-        System.out.println("\nsaveGame called");
-    }
-    
+        System.out.println("\n*** saveGame called ***");
+    }  
 }

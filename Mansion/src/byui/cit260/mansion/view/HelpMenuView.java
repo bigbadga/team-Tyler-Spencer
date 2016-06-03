@@ -29,10 +29,10 @@ public class HelpMenuView {
         do {
             // prompt for and get players name
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; //exit the game
+            if (menuOption.toUpperCase().equals("Q")) // user wants to exit to the Menu
+                return; //exit to the Main Menu
             
-            // do thte requested action and display the next view
+            // do the requested action and display the next view
             done = this.doAction(menuOption);
             
         } while (!done);
@@ -85,19 +85,19 @@ public class HelpMenuView {
     }
 
     private void goalOfGame() {
-      System.out.println("\n*** goalOfGame called");
+      System.out.println("\n*** The goal of the game is... ***");
 
     }
 
     private void howToMove() {
-        System.out.println("\n*** howToMove called");
+        System.out.println("\n*** How to move: ***");
     }
 
     private void howToUseBackpack() {
-        System.out.println("\n*** howToUseBackpack called");
+        System.out.println("\n*** How to use the backpack: ***");
     }
 
     private void displayHint() {
-        System.out.println("\n*** displayHint called");
+        System.out.println("\n*** Here is a hint: ***");
     }
 }
