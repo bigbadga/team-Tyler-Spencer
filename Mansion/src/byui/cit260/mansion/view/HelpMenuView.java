@@ -1,32 +1,29 @@
 package byui.cit260.mansion.view;
 
-import mansion.Mansion;
-import byui.cit260.mansion.control.GameControl;
 import java.util.Scanner;
 
 /**
  *
  * @author tylerbadger
  */
-public class MainMenuView {
-    private String menu;
+public class HelpMenuView {
+    private String helpMenu;
     
-    public MainMenuView(){
-    this.menu = "\n"
+    public HelpMenuView(){
+        this.helpMenu = "\n"
               + "\n------------------------------------------------------------"
-              + "\n| Main Menu                                                |"
+              + "\n| Help Menu                                                |"
               + "\n------------------------------------------------------------"
-              + "\nN - Start new game"
-              + "\nR - Restart existing game"
-              + "\nH - Help"
-              + "\nS - Save game"
-              + "\nQ - Quit"
+              + "\nG - What is the goal of the game?"
+              + "\nM - How to move"
+              + "\nB - How to get to the backpack"
+              + "\nH - Hint"
+              + "\nQ - Back to Main Menu"
               + "\n------------------------------------------------------------";
+                      
     }
-    /**
-     * displays the start program view
-     */
-    public void displayMainMenuView() {
+    
+    public void displayHelpMenuView() {
         
         boolean done = false; // set flag to not done
         do {
@@ -35,7 +32,7 @@ public class MainMenuView {
             if (menuOption.toUpperCase().equals("Q")) // user wants to quit
                 return; //exit the game
             
-            // do the requested action and display the next view
+            // do thte requested action and display the next view
             done = this.doAction(menuOption);
             
         } while (!done);
@@ -48,7 +45,7 @@ public class MainMenuView {
        boolean valid = false; // initialize to not valid
        
        while (!valid) { // loop while an invalid value is enter
-           System.out.println("\n" + this.menu);
+           System.out.println("\n" + this.helpMenu);
            
            value = keyboard.nextLine(); // get next Line typed on keyboard
            value = value.trim(); // trim off leading and trailing blanks
@@ -59,56 +56,48 @@ public class MainMenuView {
            }
            
            break; // end the loop
-       }
-       
-       return value; //return the value entered
+    }
+       return value;
     }
 
-    public boolean doAction(String choice) {
-        
+    private boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
-        switch (choice) {
-            case "N":
-                this.startNewGame();
+        switch(choice) {
+            case "G":
+                this.goalOfGame();
                 break;
-            case "R":
-                this.startExistingGame();
+            case "M":
+                this.howToMove();
+                break;
+            case "B":
+                this.howToUseBackpack();
                 break;
             case "H":
-                this.displayHelpMenu();
-                break;
-            case "S":
-                this.saveGame();
+                this.displayHint();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
+                
         }
-        
         return false;
     }
 
-    private void startNewGame() {
-        // create a new game
-        GameControl.createNewGame(Mansion.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void goalOfGame() {
+      System.out.println("\n*** goalOfGame called");
+
     }
 
-    private void startExistingGame() {
-        System.out.println("\n*** startExistingGame called");
+    private void howToMove() {
+        System.out.println("\n*** howToMove called");
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+    private void howToUseBackpack() {
+        System.out.println("\n*** howToUseBackpack called");
     }
 
-    private void saveGame() {
-        System.out.println("\nsaveGame called");
+    private void displayHint() {
+        System.out.println("\n*** displayHint called");
     }
-    
 }
