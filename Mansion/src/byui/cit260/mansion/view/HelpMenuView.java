@@ -18,7 +18,7 @@ public class HelpMenuView {
               + "\nM - How to move"
               + "\nB - How to get to the backpack"
               + "\nH - Hint"
-              + "\nQ - Back to Main Menu"
+              + "\nQ - Back to previous Menu"
               + "\n------------------------------------------------------------";
                       
     }
