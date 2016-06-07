@@ -75,7 +75,7 @@ public class BackpackMenuView {
             case "V":
                 this.victims();
                 break;
-            case "H":
+            case "W":
                 this.weapons();
                 break;
             default:
