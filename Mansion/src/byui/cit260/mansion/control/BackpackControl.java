@@ -33,7 +33,7 @@ public class BackpackControl {
         return hours;
     }
     
-    public int calcAge ( int birthdayYear, int yearOfCountry){
+    public static int calcAge ( int birthdayYear, int yearOfCountry){
  
     //if input is invalid, then return error code and exit.
  
@@ -50,4 +50,22 @@ public class BackpackControl {
     int age= 2016-(birthdayYear+ yearOfCountry);
     return age;
     }
+    
+    public static boolean checkAge(int birthdayYear,int yearOfCountry, long guessedAge) {
+        
+        int calculatedAge =  BackpackControl.calcAge(birthdayYear, yearOfCountry);
+        
+        if (calculatedAge < 0) {
+            return false;
+        }
+        
+        if (calculatedAge == guessedAge) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
+
+
