@@ -87,7 +87,8 @@ public class BackpackMenuView {
     }
 
     private void clues() {
-      System.out.println("\n***clue 1:.... ***");
+      AgefunctionView agefunction= new AgefunctionView();
+      agefunction.displayAgefunctionView();
 
     }
 

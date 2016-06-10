@@ -59,7 +59,7 @@ public class BackpackControl {
             return false;
         }
         
-        if (calculatedAge == guessedAge) {
+        else if (calculatedAge == guessedAge) {
             return true;
         }
         else {

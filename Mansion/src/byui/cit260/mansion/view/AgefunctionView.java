@@ -13,10 +13,10 @@ import java.util.Scanner;
  */
 public class AgefunctionView {
     
-     private String backpackMenu;
-    private String agefunctionView;
+     
+    private String agefunction;
     public AgefunctionView(){
-        this.backpackMenu = "\nThis is one of the IDs you got from suspects.   "
+        this.agefunction = "\nThis is one of the IDs you got from suspects.   "
               + "\n"
               + "\n                                                            "
               + "\n------------------------------------------------------------"
@@ -53,7 +53,7 @@ public class AgefunctionView {
        boolean valid = false; // initialize to not valid
        
        while (!valid) { // loop while an invalid value is enter
-           System.out.println("\n" + this.agefunctionView);
+           System.out.println("\n" + this.agefunction);
            
            value = keyboard.nextLine(); // get next Line typed on keyboard
            value = value.trim(); // trim off leading and trailing blanks
@@ -79,13 +79,19 @@ public class AgefunctionView {
         // if age returned is negative
         if (answer==true){ 
         System.out.println("\n*** This is right, the age will now be stored in the suspect files.***");
+        
         }
         else {
         System.out.println("\n*** Please try again.***");
+        
         }   
-        return doAction(choice);
+                
+        return true;
+        
     }
+   
 }
+    
         
     
     
