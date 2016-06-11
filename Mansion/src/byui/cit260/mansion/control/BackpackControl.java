@@ -20,7 +20,7 @@ public class BackpackControl {
         return HighestAmountOfRain;
     }
     
-    public double calcTimeOfDeath(double earliestTime, double latestTime) {
+    public static int calcTimeOfDeath(int earliestTime, int latestTime) {
         
         if(earliestTime < 0 || earliestTime > 24){
             return -1;
@@ -29,8 +29,26 @@ public class BackpackControl {
             return -1;
         }
         
-        double hours = latestTime - earliestTime;
+        int hours = latestTime - earliestTime;
         return hours;
+    }
+    
+    public static boolean checkTime(int earliestTime, int latestTime, int guessedTime){
+        
+        int calculatedTime = BackpackControl.calcTimeOfDeath(earliestTime, latestTime);
+        
+        if (calculatedTime == 0){
+            
+            return false;
+            
+        } else if (calculatedTime == guessedTime){
+            
+            return true;
+            
+        } else {
+            
+            return false;
+        }
     }
     
     public static int calcAge ( int birthdayYear, int yearOfCountry){

@@ -90,11 +90,11 @@ public class BackpackControlTest {
     @Test
     public void testCalcTimeOfDeath() {
         System.out.println("calcTimeOfDeath1");
-        double earliestTime = 20;
-        double latestTime = 23;
+        int earliestTime = 20;
+        int latestTime = 23;
         BackpackControl instance = new BackpackControl();
-        double expResult = 3;
-        double result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        int expResult = 3;
+        int result = instance.calcTimeOfDeath(earliestTime, latestTime);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("calcTimeOfDeath2");
