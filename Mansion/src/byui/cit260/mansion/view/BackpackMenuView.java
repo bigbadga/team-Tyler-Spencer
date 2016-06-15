@@ -94,7 +94,8 @@ public class BackpackMenuView {
     }
 
     private void victims() {
-        System.out.println("\n*** victim 1:... ***");
+        TimeOfDeathView timeOfDeath = new TimeOfDeathView();
+        timeOfDeath.displayTimeOfDeathView();
     }
 
     private void weapons() {

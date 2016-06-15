@@ -10,7 +10,7 @@ import byui.cit260.mansion.control.BackpackControl;
 public class TimeOfDeathView {
     
     private String timeOfDeath;
-    private double value;
+    private String value;
     
     public TimeOfDeathView(){
         this.timeOfDeath = "\n"
@@ -21,72 +21,68 @@ public class TimeOfDeathView {
               + "\nhe died. The waitress who was working that night said that "
               + "\nhe left the restaurant at about 8:00 PM. The victim was"
               + "\nfound dead at 2 in the morning, and had been dead for at"
-              + "\nleast 2 hours. What is the latest possible time of death, "
-              + "\nand how many hours did the murderer have to kill the victim?"
-              + "\nFirst, what was the earliest time, and the latest time?"
-              + "\n(Answer in military time)"
+              + "\nleast 2 hours. How many hours did the murderer have to kill "
+              + "\nthe victim?"
               + "\n------------------------------------------------------------";
     }
-    public void displayTimeOfDeathView(){
+
+    public void displayTimeOfDeathView() {
+        
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get the times
-            double EarliestTime = this.getEarliestTime();
-            double LatestTime = this.getLatestTime();
+            // prompt for and get input from the player
+            String option = this.getOption();
+            if (option.toUpperCase().equals("Q")) // user wants to exit to the Menu
+                return; //exit to the Main Menu
             
             // do the requested action and display the next view
-//            done = this.doAction(EarliestTime, LatestTime);
+            done = this.doAction(option);
             
         } while (!done);
+        
     }
 
-    private double getEarliestTime() {
+    private String getOption() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-      // double value = ""; // value to be returned
+       String value = ""; // value to be returned
        boolean valid = false; // initialize to not valid
        
        while (!valid) { // loop while an invalid value is enter
-          System.out.println("\n" + this.timeOfDeath);
+           System.out.println("\n" + this.timeOfDeath);
            
-          value = keyboard.nextDouble(); // get next Line typed on keyboard
-           //value = value.trim(); // trim off leading and trailing blanks
+           value = keyboard.nextLine(); // get next Line typed on keyboard
+           value = value.trim(); // trim off leading and trailing blanks
            
-           if(String.valueOf(value).length() < 1) { // value is blank
+           if(value.length() < 1) { // value is blank
                System.out.println("\nInvalid value: value can not be blank");
                continue;
            }
            
            break; // end the loop
     }
-       return  value;
-    }
-    
-    private double getLatestTime() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-      // double value = ""; // value to be returned
-       boolean valid = false; // initialize to not valid
-       
-       while (!valid) { // loop while an invalid value is enter
-          System.out.println("\n" + this.timeOfDeath);
-           
-          value = keyboard.nextDouble(); // get next Line typed on keyboard
-           //value = value.trim(); // trim off leading and trailing blanks
-           
-           if(String.valueOf(value).length() < 1) { // value is blank
-               System.out.println("\nInvalid value: value can not be blank");
-               continue;
-           }
-           
-           break; // end the loop
-    }
-       return  value;
+       return value;
     }
 
-//    private double doAction(double EarliestTime, double LatestTime) {
-//        calcTimeOfDeath(EarliestTime, LatestTime);
-//        if(value == -1){
-//            
-//        }
-//        return value;
-//    }
+    private boolean doAction(String choice) {
+        //convert choice to integer
+        
+        int time = Integer.parseInt(choice);
+        
+        // call calcTimeOfDeath and pass the possible times of death
+        
+        boolean answer=BackpackControl.checkTime(20, 24, time);
+        // if age returned is negative
+        if (answer==true){ 
+        System.out.println("\n*** This is right, the time of death will now be stored in the victim files.***");
+        
+        }
+        else {
+        System.out.println("\n*** Please try again.***");
+        displayTimeOfDeathView();
+        }   
+                
+        return true;
+        
+    }
+   
 }

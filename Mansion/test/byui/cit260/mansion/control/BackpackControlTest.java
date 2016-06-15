@@ -33,9 +33,7 @@ public class BackpackControlTest {
         BackpackControl instance = new BackpackControl();
         double expResult = 36000;
         double result = instance.calcAmountOfRain(sumLY, seasonRain);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        
+        assertEquals(expResult, result, 0.0);        
         
         System.out.println("TestCase2");
         sumLY = -1;
@@ -90,11 +88,11 @@ public class BackpackControlTest {
     @Test
     public void testCalcTimeOfDeath() {
         System.out.println("calcTimeOfDeath1");
-        double earliestTime = 20;
-        double latestTime = 23;
+        int earliestTime = 20;
+        int latestTime = 23;
         BackpackControl instance = new BackpackControl();
-        double expResult = 3;
-        double result = instance.calcTimeOfDeath(earliestTime, latestTime);
+        int expResult = 3;
+        int result = instance.calcTimeOfDeath(earliestTime, latestTime);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("calcTimeOfDeath2");
@@ -138,7 +136,7 @@ public class BackpackControlTest {
      */
     @Test
     public void testCalcAge() {
-        System.out.println("calcAge");
+        System.out.println("agetestcase1");
         int birthdayYear = 81;
         int yearOfCountry = 1911;
         BackpackControl instance = new BackpackControl();

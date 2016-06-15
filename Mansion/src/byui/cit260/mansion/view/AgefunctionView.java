@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mansion.view;
 import byui.cit260.mansion.control.BackpackControl;
 import java.util.Scanner;
@@ -27,7 +22,7 @@ public class AgefunctionView {
               + "\n| Country: Nigra (found in 1905)                        |"
               + "\n------------------------------------------------------------"
               + "\nWhat is this suspect's age?"
-              + "\n(calculate the age or press Q to exist.)";
+              + "\n(calculate the age or press Q to quit.)";
                       
     }
     
@@ -35,7 +30,7 @@ public class AgefunctionView {
         
         boolean done = false; // set flag to not done
         do {
-            // prompt for and get players name
+            // prompt for and get input from the player
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) // user wants to exit to the Menu
                 return; //exit to the Main Menu
