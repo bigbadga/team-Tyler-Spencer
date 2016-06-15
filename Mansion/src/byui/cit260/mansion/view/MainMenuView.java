@@ -8,11 +8,11 @@ import java.util.Scanner;
  *
  * @author tylerbadger
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     private String menu;
     
     public MainMenuView(){
-    this.menu = "\n"
+    super( "\n"
               + "\n------------------------------------------------------------"
               + "\n| Main Menu                                                |"
               + "\n------------------------------------------------------------"
@@ -21,54 +21,15 @@ public class MainMenuView {
               + "\nH - Help"
               + "\nS - Save game"
               + "\nQ - Quit"
-              + "\n------------------------------------------------------------";
-    }
-    /**
-     * displays the start program view
-     */
-    public void displayMainMenuView() {
-        
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; //exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
+              + "\n------------------------------------------------------------");
     }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-       String value = ""; // value to be returned
-       boolean valid = false; // initialize to not valid
-       
-       while (!valid) { // loop while an invalid value is enter
-           System.out.println("\n" + this.menu);
-           
-           value = keyboard.nextLine(); // get next Line typed on keyboard
-           value = value.trim(); // trim off leading and trailing blanks
-           
-           if(value.length() < 1) { // value is blank
-               System.out.println("\nInvalid value: value can not be blank");
-               continue;
-           }
-           
-           break; // end the loop
-       }
-       
-       return value; //return the value entered
-    }
-
-    public boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String value) {
         
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
         
-        switch (choice) {
+        switch (value) {
             case "N":
                 this.startNewGame();
                 break;
