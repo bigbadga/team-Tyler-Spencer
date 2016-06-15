@@ -24,7 +24,7 @@ public class AgefunctionView {
               + "\n------------------------------------------------------------"
               + "\n| Name: Bryan Cook     G: Male                             |"
               + "\n| Birthday:73-5-16                                         |"
-              + "\n| Country: Nigratho (found in 1905)                        |"
+              + "\n| Country: Nigra (found in 1905)                        |"
               + "\n------------------------------------------------------------"
               + "\nWhat is this suspect's age?"
               + "\n(calculate the age or press Q to exist.)";
