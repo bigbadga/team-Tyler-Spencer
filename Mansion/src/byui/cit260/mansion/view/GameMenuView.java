@@ -1,17 +1,15 @@
 package byui.cit260.mansion.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author tylerbadger
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
     private String gameMenu;
     
     public GameMenuView(){
-        this.gameMenu = "\n"
+        super("\n"
               + "\n------------------------------------------------------------"
               + "\n| Game Menu                                                |"
               + "\n------------------------------------------------------------"
@@ -25,57 +23,14 @@ public class GameMenuView {
               + "\nB - Show backpack"
               + "\nG - Guess the murderer"
               + "\nQ - Quit"
-              + "\n------------------------------------------------------------";
+              + "\n------------------------------------------------------------");
     }
  
-    /**
-     * displays the start program view
-     */
-    public void displayGameMenuView() {
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; //exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-
-    void displayMenu() {
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-       String value = ""; // value to be returned
-       boolean valid = false; // initialize to not valid
-       
-       while (!valid) { // loop while an invalid value is enter
-           System.out.println("\n" + this.gameMenu);
-           
-           value = keyboard.nextLine(); // get next Line typed on keyboard
-           value = value.trim(); // trim off leading and trailing blanks
-           
-           if(value.length() < 1) { // value is blank
-               System.out.println("\nInvalid value: value can not be blank");
-               continue;
-           }
-           
-           break; // end the loop
-       }
-       
-       return value; //return the value entered
-    }
-    
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "C":
                 this.moveCharacter();
                 break;
@@ -137,12 +92,12 @@ public class GameMenuView {
 
     private void helpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void backpackMenu() {
         BackpackMenuView backpackMenu = new BackpackMenuView();
-        backpackMenu.displayBackpackMenuView();
+        backpackMenu.display();
     }
 
     private void guessMurderer() {
