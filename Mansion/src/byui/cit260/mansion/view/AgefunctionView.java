@@ -6,12 +6,12 @@ import java.util.Scanner;
  *
  * @author che11_000
  */
-public class AgefunctionView {
+public class AgefunctionView extends View{
     
      
     private String agefunction;
     public AgefunctionView(){
-        this.agefunction = "\nThis is one of the IDs you got from suspects.   "
+        super (  "\nThis is one of the IDs you got from suspects.   "
               + "\n"
               + "\n                                                            "
               + "\n------------------------------------------------------------"
@@ -22,50 +22,15 @@ public class AgefunctionView {
               + "\n| Country: Nigra (found in 1905)                        |"
               + "\n------------------------------------------------------------"
               + "\nWhat is this suspect's age?"
-              + "\n(calculate the age or press Q to quit.)";
+              + "\n(calculate the age or press Q to quit.)");
                       
     }
     
-    public void displayAgefunctionView() {
-        
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get input from the player
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to exit to the Menu
-                return; //exit to the Main Menu
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
+    
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-       String value = ""; // value to be returned
-       boolean valid = false; // initialize to not valid
-       
-       while (!valid) { // loop while an invalid value is enter
-           System.out.println("\n" + this.agefunction);
-           
-           value = keyboard.nextLine(); // get next Line typed on keyboard
-           value = value.trim(); // trim off leading and trailing blanks
-           
-           if(value.length() < 1) { // value is blank
-               System.out.println("\nInvalid value: value can not be blank");
-               continue;
-           }
-           
-           break; // end the loop
-    }
-       return value;
-    }
-
-    private boolean doAction(String choice) {
+    public boolean doAction(String value) {
         // convert choice to long number
-        long age=Long.parseLong(choice);
+        long age=Long.parseLong(value);
         
         // call calcAge and pass the date and puntry years
         
