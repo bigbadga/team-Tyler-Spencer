@@ -1,5 +1,4 @@
 package byui.cit260.mansion.view;
-import java.util.Scanner;
 /**
  *
  * @author che11_000
