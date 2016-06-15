@@ -85,7 +85,7 @@ public class BackpackMenuView {
 
     private void clues() {
       AgefunctionView agefunction= new AgefunctionView();
-      agefunction.displayAgefunctionView();
+      agefunction.display();
 
     }
 
@@ -95,7 +95,7 @@ public class BackpackMenuView {
 
     private void victims() {
         TimeOfDeathView timeOfDeath = new TimeOfDeathView();
-        timeOfDeath.displayTimeOfDeathView();
+        timeOfDeath.display();
     }
 
     private void weapons() {
