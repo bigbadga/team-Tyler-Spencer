@@ -2,7 +2,6 @@ package byui.cit260.mansion.view;
 
 import mansion.Mansion;
 import byui.cit260.mansion.control.GameControl;
-import java.util.Scanner;
 
 /**
  *
@@ -56,7 +55,7 @@ public class MainMenuView extends View {
         
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -65,7 +64,7 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {
