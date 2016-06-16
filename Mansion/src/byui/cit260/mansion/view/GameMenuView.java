@@ -67,7 +67,8 @@ public class GameMenuView extends View {
     }
 
     private void moveCharacter() {
-        System.out.println("\n*** moveCharacter() called ***");
+        MoveView move = new MoveView();
+        move.display();
     }
 
     private void interactWithObject() {
