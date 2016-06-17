@@ -102,7 +102,8 @@ public class GameMenuView extends View {
     }
 
     private void guessMurderer() {
-        System.out.println("\n*** guessMurderer() called ***");
+        GuessMurdererView guessmurderer=new GuessMurdererView();
+        guessmurderer.display();
     }
 
 }
