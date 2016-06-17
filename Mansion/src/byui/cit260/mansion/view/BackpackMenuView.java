@@ -63,7 +63,8 @@ public class BackpackMenuView extends View {
     }
 
     private void weapons() {
-        System.out.println("\n*** weapon 1:.... ***");
+        WeaponView weapons = new WeaponView();
+        weapons.display();
     }
     
 }
