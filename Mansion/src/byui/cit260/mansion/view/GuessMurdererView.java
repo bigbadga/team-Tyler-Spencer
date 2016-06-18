@@ -13,8 +13,7 @@ public class GuessMurdererView extends View{
     }
     @Override
     public boolean doAction(String value) {
-        
-        
+       
         switch (value) {
             case "John Allen Smith":
                 System.out.println("You got it. Well done, detective!");

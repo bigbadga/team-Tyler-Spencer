@@ -72,7 +72,8 @@ public class GameMenuView extends View {
     }
 
     private void interactWithObject() {
-        System.out.println("\n*** interactWithObject() called ***");
+        InteractWithObjectView interact = new InteractWithObjectView();
+        interact.display();
     }
 
     private void displayObjects() {
