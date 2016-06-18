@@ -13,9 +13,10 @@ public class GuessMurdererView extends View{
     }
     @Override
     public boolean doAction(String value) {
-       
+
+        value=value.toUpperCase();
         switch (value) {
-            case "John Allen Smith":
+            case "JOHN ALLEN SMITH":
                 System.out.println("You got it. Well done, detective!");
                 
                 return true;
