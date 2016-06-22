@@ -8,8 +8,10 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double startTime;
     private double endTime;
-
-      
+    private Player player;
+    private Item[] items;
+    private Map map;
+    private Backpack backpack;
 
     private double totalTime;
 
@@ -38,6 +40,42 @@ public class Game implements Serializable{
 
     public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    public void setBackpack(Item[] backpackList) {
+        
     }
 
     @Override
@@ -78,5 +116,4 @@ public class Game implements Serializable{
         return "Game{" + "startTime=" + startTime + ", endTime=" + endTime + ", totalTime=" + totalTime + '}';
     }
 
-   
 }

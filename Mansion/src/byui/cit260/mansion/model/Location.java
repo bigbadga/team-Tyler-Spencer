@@ -11,6 +11,8 @@ public class Location implements Serializable{
     private String description;
     private Integer row;
     private Integer column;
+    private boolean visited;
+    private Scene scene;
 
     public Location() {
     }
@@ -38,6 +40,16 @@ public class Location implements Serializable{
     public void setColumn(Integer column) {
         this.column = column;
     }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+    
+    
 
     @Override
     public int hashCode() {
