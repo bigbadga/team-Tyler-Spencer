@@ -11,8 +11,15 @@ public class Item implements Serializable{
     private String itemName;
     private String description;
     private String content;
+    private int itemAmount;
 
     public Item() {
+    }
+    
+    public enum BackpackItem {
+        gun,
+        hammer,
+        clue;
     }
 
     public String getItemName() {
@@ -37,6 +44,14 @@ public class Item implements Serializable{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getItemAmount() {
+        return itemAmount;
+    }
+
+    public void setItemAmount(int itemAmount) {
+        this.itemAmount = itemAmount;
     }
 
     @Override

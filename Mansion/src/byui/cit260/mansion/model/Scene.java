@@ -21,7 +21,7 @@ public class Scene implements Serializable{
         start,
         kitchen,
         living,
-        guest,
+        guestRoom,
         bedroom;
     }
 

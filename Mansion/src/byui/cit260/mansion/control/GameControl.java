@@ -44,8 +44,31 @@ public class GameControl {
     }
     
     public static Item[] createBackpackList() {
-        System.out.println("*** called createBackpackList() in GameControl ***");
-        return null;
+        
+        // created array of backpack items
+        Item[] backpack = new Item[3];
+        
+        Item gun = new Item();
+        gun.setItemName("Gun");
+        gun.setDescription("It is a large gun, possibly used for murder");
+        gun.setItemAmount(0);
+        gun.setContent("");
+        backpack[0] = gun;
+        
+        Item hammer = new Item();
+        hammer.setItemName("Hammer");
+        hammer.setDescription("This hammer looks suspicious...");
+        hammer.setItemAmount(0);
+        hammer.setContent("");
+        backpack[1] = hammer;
+        
+        Item clue = new Item();
+        clue.setItemName("Clue");
+        clue.setDescription("");
+        clue.setItemAmount(0);
+        clue.setContent("");
+        backpack[2] = clue;
+        
+        return backpack;
     }
-    
 }
