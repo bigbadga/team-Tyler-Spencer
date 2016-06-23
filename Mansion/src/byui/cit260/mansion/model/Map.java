@@ -10,7 +10,17 @@ import java.util.Objects;
 public class Map implements Serializable{
     private Integer numberOfRows;
     private Integer numberOfColumns;
+    public enum EnumLocation {
 
+Type1,Type2;
+
+private static Location [][] location = new Location[5][5];
+static {
+    
+}
+}      
+         
+                
     public Map() {
     }
 
