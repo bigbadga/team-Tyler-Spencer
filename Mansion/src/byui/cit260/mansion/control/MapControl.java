@@ -39,6 +39,7 @@ class MapControl {
         locations[1][3].setScene(scenes[SceneType.bathroom.ordinal()]);
         locations[1][4].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[2][0].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.pianoroom.ordinal()]);
     }
     
     private static Scene[] createScenes() {
@@ -115,6 +116,14 @@ class MapControl {
         bedroom.setBlockedRoom(false);
         bedroom.setTravelTime(0);
         scenes[Scene.SceneType.diningroom.ordinal()] = diningroom;
+        
+         Scene piano = new Scene();
+        bedroom.setDescription("");
+        bedroom.setMapSymbol(" DI ");
+        bedroom.setBlockedRoom(false);
+        bedroom.setTravelTime(0);
+        scenes[Scene.SceneType.pianoroom.ordinal()] = piano;
+        
         return scenes;
         
         

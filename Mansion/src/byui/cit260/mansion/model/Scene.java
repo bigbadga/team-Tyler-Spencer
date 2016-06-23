@@ -27,6 +27,7 @@ public class Scene implements Serializable{
         hallway,
         bathroom,
         diningroom,
+        pianoroom,
         bedroom;
 
         
