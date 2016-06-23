@@ -11,7 +11,7 @@ public class Location implements Serializable{
     private String description;
     private Integer row;
     private Integer column;
-
+    private Character character;
     public Location() {
     }
 
@@ -37,6 +37,14 @@ public class Location implements Serializable{
 
     public void setColumn(Integer column) {
         this.column = column;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 
     @Override
