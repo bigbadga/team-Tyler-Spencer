@@ -10,9 +10,26 @@ public class Scene implements Serializable{
     private String description;
     private String item;
     private String clue;
-    private String blockedRoom;
+    private boolean blockedRoom;
+    private String mapSymbol;
+    private int travelTime;
 
     public Scene() {
+    }
+    
+    public enum SceneType {
+        start,
+        kitchen,
+        living,
+        guestRoom,
+        theater,
+        gym,
+        hallway,
+        bathroom,
+        diningroom,
+        bedroom;
+
+        
     }
 
     public String getDescription() {
@@ -39,13 +56,31 @@ public class Scene implements Serializable{
         this.clue = clue;
     }
 
-    public String getBlockedRoom() {
+    public boolean getBlockedRoom() {
         return blockedRoom;
     }
 
-    public void setBlockedroom(String blockedroom) {
-        this.blockedRoom = blockedroom;
+    public void setBlockedRoom(boolean blockedRoom) {
+        this.blockedRoom = blockedRoom;
     }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public int getTravelTime() {
+        return travelTime;
+    }
+
+    public void setTravelTime(int travelTime) {
+        this.travelTime = travelTime;
+    }
+    
+    
 
     @Override
     public int hashCode() {

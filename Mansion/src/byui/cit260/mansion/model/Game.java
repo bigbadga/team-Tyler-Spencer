@@ -8,11 +8,19 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double startTime;
     private double endTime;
+
     private Backpack backpack;
     private Player player;
     private Character character;
-    private double totalTime;
+
+    
+    private Item[] items;
     private Map map;
+   
+
+
+    private double totalTime;
+    
 
     public Game() {
     }
@@ -41,14 +49,6 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
-    public Backpack getBackpack() {
-        return backpack;
-    }
-
-    public void setBackpack(Backpack backpack) {
-        this.backpack = backpack;
-    }
-
     public Player getPlayer() {
         return player;
     }
@@ -57,12 +57,20 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    public Character getCharacter() {
-        return character;
+    public Backpack getBackpack() {
+        return backpack;
     }
 
-    public void setCharacter(Character character) {
-        this.character = character;
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
     }
 
     public Map getMap() {
@@ -72,6 +80,22 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
+    
+    public void setBackpack(Item[] backpackList) {
+        
+    }
+
+    
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+  
 
     @Override
     public int hashCode() {
@@ -111,5 +135,4 @@ public class Game implements Serializable{
         return "Game{" + "startTime=" + startTime + ", endTime=" + endTime + ", totalTime=" + totalTime + '}';
     }
 
-   
 }
