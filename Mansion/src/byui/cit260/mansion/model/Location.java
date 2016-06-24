@@ -110,6 +110,4 @@ public class Location implements Serializable{
         return "Location{" + "description=" + description + ", row=" + row + ", column=" + column + '}';
     }
     
-    
-    
 }
