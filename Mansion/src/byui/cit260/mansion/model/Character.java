@@ -14,7 +14,7 @@ public class Character implements Serializable {
     private String description;
     private Integer columnCoordinate;
     private Integer rowCoordinate;
-
+    
     public Character() {
     }
 
