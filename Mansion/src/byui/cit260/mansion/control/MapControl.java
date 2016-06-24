@@ -28,30 +28,43 @@ class MapControl {
         Location[][] locations = map.getLocations();
         
         // start point
-        locations[0][0].setScene(scenes[SceneType.living.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.living.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.living.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.living.ordinal()]);
-        locations[1][0].setScene(scenes[SceneType.living.ordinal()]);
+        locations[0][0].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.frontDoor.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[1][1].setScene(scenes[SceneType.kitchen.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.diningroom.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.diningRoom.ordinal()]);
         locations[1][3].setScene(scenes[SceneType.bathroom.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.bedroom.ordinal()]);
         locations[2][0].setScene(scenes[SceneType.hallway.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.pianoroom.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.pianoRoom.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.poolTable.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.gym.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.library.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.guestRoom.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.living.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.secretRoom.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.bathroom.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.garden.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.garage.ordinal()]);
     }
     
     private static Scene[] createScenes() {
         
         Scene[] scenes = new Scene[Scene.SceneType.values().length];
         
-        Scene startingScene = new Scene();
-        startingScene.setDescription("");
-        startingScene.setMapSymbol(" ST ");
-        startingScene.setBlockedRoom(false);
-        startingScene.setTravelTime(0);
-        scenes[Scene.SceneType.start.ordinal()] = startingScene;
+        Scene frontDoor = new Scene();
+        frontDoor.setDescription("");
+        frontDoor.setMapSymbol(" ST ");
+        frontDoor.setBlockedRoom(false);
+        frontDoor.setTravelTime(0);
+        scenes[Scene.SceneType.frontDoor.ordinal()] = frontDoor;
         
         Scene kitchen = new Scene();
         kitchen.setDescription("");
@@ -62,7 +75,7 @@ class MapControl {
         
         Scene living = new Scene();
         living.setDescription("");
-        living.setMapSymbol(" L ");
+        living.setMapSymbol(" LR ");
         living.setBlockedRoom(false);
         living.setTravelTime(0);
         scenes[Scene.SceneType.living.ordinal()] = living;
@@ -82,50 +95,84 @@ class MapControl {
         scenes[Scene.SceneType.bedroom.ordinal()] = bedroom;
         
         Scene theater = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" T ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
+        theater.setDescription("");
+        theater.setMapSymbol(" T ");
+        theater.setBlockedRoom(false);
+        theater.setTravelTime(0);
         scenes[Scene.SceneType.theater.ordinal()] = theater;
         
         
         Scene gym = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" G ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
+        gym.setDescription("");
+        gym.setMapSymbol(" G ");
+        gym.setBlockedRoom(false);
+        gym.setTravelTime(0);
         scenes[Scene.SceneType.gym.ordinal()] = gym;
         
         Scene hallway = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" G ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
+        hallway.setDescription("");
+        hallway.setMapSymbol(" H ");
+        hallway.setBlockedRoom(false);
+        hallway.setTravelTime(0);
         scenes[Scene.SceneType.hallway.ordinal()] = hallway;
         
         Scene bathroom = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" BA ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
+        bathroom.setDescription("");
+        bathroom.setMapSymbol(" BA ");
+        bathroom.setBlockedRoom(false);
+        bathroom.setTravelTime(0);
         scenes[Scene.SceneType.bathroom.ordinal()] = bathroom;
         
-        Scene diningroom = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" DI ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
-        scenes[Scene.SceneType.diningroom.ordinal()] = diningroom;
+        Scene diningRoom = new Scene();
+        diningRoom.setDescription("");
+        diningRoom.setMapSymbol(" DI ");
+        diningRoom.setBlockedRoom(false);
+        diningRoom.setTravelTime(0);
+        scenes[Scene.SceneType.diningRoom.ordinal()] = diningRoom;
         
-         Scene piano = new Scene();
-        bedroom.setDescription("");
-        bedroom.setMapSymbol(" DI ");
-        bedroom.setBlockedRoom(false);
-        bedroom.setTravelTime(0);
-        scenes[Scene.SceneType.pianoroom.ordinal()] = piano;
+         Scene pianoRoom = new Scene();
+        pianoRoom.setDescription("");
+        pianoRoom.setMapSymbol(" PR ");
+        pianoRoom.setBlockedRoom(false);
+        pianoRoom.setTravelTime(0);
+        scenes[Scene.SceneType.pianoRoom.ordinal()] = pianoRoom;
+        
+        Scene poolTable = new Scene();
+        poolTable.setDescription("");
+        poolTable.setMapSymbol(" PT ");
+        poolTable.setBlockedRoom(false);
+        pianoRoom.setTravelTime(0);
+        scenes[Scene.SceneType.poolTable.ordinal()] = poolTable;
+        
+        Scene library = new Scene();
+        library.setDescription("");
+        library.setMapSymbol(" LB ");
+        library.setBlockedRoom(false);
+        library.setTravelTime(0);
+        scenes[Scene.SceneType.library.ordinal()] = library;
+        
+        Scene secretRoom = new Scene();
+        secretRoom.setDescription("");
+        secretRoom.setMapSymbol(" SR ");
+        secretRoom.setBlockedRoom(true);
+        secretRoom.setTravelTime(0);
+        scenes[Scene.SceneType.secretRoom.ordinal()] = secretRoom;
+        
+        Scene garage = new Scene();
+        garage.setDescription("");
+        garage.setMapSymbol(" GA ");
+        garage.setBlockedRoom(false);
+        garage.setTravelTime(0);
+        scenes[Scene.SceneType.garage.ordinal()] = garage;
+        
+        Scene garden = new Scene();
+        garden.setDescription("");
+        garden.setMapSymbol(" GD ");
+        garden.setBlockedRoom(false);
+        garden.setTravelTime(0);
+        scenes[Scene.SceneType.garden.ordinal()] = garden;
         
         return scenes;
-        
         
     }
 

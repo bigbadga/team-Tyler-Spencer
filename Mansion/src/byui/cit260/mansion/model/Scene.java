@@ -18,7 +18,7 @@ public class Scene implements Serializable{
     }
     
     public enum SceneType {
-        start,
+        frontDoor,
         kitchen,
         living,
         guestRoom,
@@ -26,11 +26,14 @@ public class Scene implements Serializable{
         gym,
         hallway,
         bathroom,
-        diningroom,
-        pianoroom,
-        bedroom;
-
-        
+        diningRoom,
+        pianoRoom,
+        bedroom,
+        poolTable,
+        library,
+        secretRoom,
+        garage,
+        garden;
     }
 
     public String getDescription() {
