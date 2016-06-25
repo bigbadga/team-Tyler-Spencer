@@ -19,6 +19,8 @@ public class Item implements Serializable{
     public enum BackpackItem {
         gun,
         hammer,
+        knife,
+        file,
         clue;
     }
 
