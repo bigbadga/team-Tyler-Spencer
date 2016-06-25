@@ -1,5 +1,9 @@
 package byui.cit260.mansion.view;
 
+import byui.cit260.mansion.model.Location;
+import byui.cit260.mansion.model.Scene;
+import byui.cit260.mansion.model.Map;
+
 /**
  *
  * @author tylerbadger
@@ -7,6 +11,7 @@ package byui.cit260.mansion.view;
 public class GameMenuView extends View {
     
     private String gameMenu;
+    private Location[][] map = Map.getLocations();
     
     public GameMenuView(){
         super("\n"
@@ -44,7 +49,7 @@ public class GameMenuView extends View {
                 this.obtainObjects();
                 break;
             case "M":
-                this.displayMap();
+                this.displayMap(map);
                 break;
             case "S":
                 this.saveGame();
@@ -84,8 +89,25 @@ public class GameMenuView extends View {
         System.out.println("\n*** obtainObjects() called ***");
     }
 
-    private void displayMap() {
-        System.out.println("\n*** displayMap() called ***");
+    private void displayMap(Location[][] map) {
+        // get the map locations for the current game
+        System.out.println("\n*** Mansion Map ***");
+        //System.out.println("\n 1    2     3    4    5");
+        for (Location[] map1 : map) {
+            System.out.println("----- ----- ----- ----- ----- ");
+            System.out.println(Location.getRow());
+            for (Location[] map2 : map) {
+                System.out.println("|");
+                if (Location.getVisited() == true){
+                    // String symbol = Scene.getMapSymbol();
+                    System.out.println(Scene.getMapSymbol());
+                } else {
+                    System.out.println(" ?? ");
+                }
+                System.out.println("|");
+            }
+            System.out.println("----- ----- ----- ----- ----- ");
+        }
     }
 
     private void saveGame() {

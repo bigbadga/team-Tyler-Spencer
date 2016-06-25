@@ -27,7 +27,6 @@ class MapControl {
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
-        // start point
         locations[0][0].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.frontDoor.ordinal()]);
@@ -100,7 +99,6 @@ class MapControl {
         theater.setBlockedRoom(false);
         theater.setTravelTime(0);
         scenes[Scene.SceneType.theater.ordinal()] = theater;
-        
         
         Scene gym = new Scene();
         gym.setDescription("");

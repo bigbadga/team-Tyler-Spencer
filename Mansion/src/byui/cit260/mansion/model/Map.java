@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Map implements Serializable{
     private Integer noOfRows;
     private Integer noOfColumns;
-    private Location[][] locations;
+    private static Location[][] locations;
 
     public Map() {
     }
@@ -26,7 +26,7 @@ public class Map implements Serializable{
         this.noOfColumns = noOfColumns;
         
         // create 2-D array for Location objects
-        this.locations = new Location[noOfRows][noOfColumns];
+        Map.locations = new Location[noOfRows][noOfColumns];
         
         for (int row = 0; row < noOfRows; row++) {
             for(int column = 0; column < noOfColumns; column++) {
@@ -58,12 +58,12 @@ public class Map implements Serializable{
         this.noOfColumns = numberOfColumns;
     }
 
-    public Location[][] getLocations() {
+    public static Location[][] getLocations() {
         return locations;
     }
 
     public void setLocations(Location[][] locations) {
-        this.locations = locations;
+        Map.locations = locations;
     }
     
     

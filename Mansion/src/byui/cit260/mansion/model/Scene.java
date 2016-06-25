@@ -11,7 +11,7 @@ public class Scene implements Serializable{
     private String item;
     private String clue;
     private boolean blockedRoom;
-    private String mapSymbol;
+    private static String mapSymbol;
     private int travelTime;
 
     public Scene() {
@@ -68,12 +68,12 @@ public class Scene implements Serializable{
         this.blockedRoom = blockedRoom;
     }
 
-    public String getMapSymbol() {
+    public static String getMapSymbol() {
         return mapSymbol;
     }
 
     public void setMapSymbol(String mapSymbol) {
-        this.mapSymbol = mapSymbol;
+        Scene.mapSymbol = mapSymbol;
     }
 
     public int getTravelTime() {
