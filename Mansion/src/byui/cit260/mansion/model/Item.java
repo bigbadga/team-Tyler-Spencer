@@ -2,12 +2,15 @@ package byui.cit260.mansion.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author che11_000
  */
-public class Item implements Serializable{
- //class instance variable
+public class Item implements Serializable {
+
+    public static Iterable<String> BackpackItem;
+    //class instance variable
     private String itemName;
     private String description;
     private String content;
@@ -15,14 +18,37 @@ public class Item implements Serializable{
 
     public Item() {
     }
-    
+
     public enum BackpackItem {
-        gun,
-        hammer,
-        knife,
-        file,
-        clue;
+
+        gun("gun", "Useful weapon, but can be dangerous."),
+        hammer("hammer","This hammer can be use to fix things."),
+        knife("knife","this might be the weapon that the murderer used to kill the victim."),
+        file1("file1","Suspect's file"),
+        file2("file2","Suspect's file"),
+        file3("file3","Suspect's file"),
+        file4("file4","Suspect's file"),
+        file5("file5","Suspect's file"),
+        file6("file6","Suspect's file"),
+        file7("file7","Suspect's file"),
+        clue1("clue1","Clue you found"),
+        clue2("clue2","Clue you found"),
+        clue3("clue3","Clue you found"),
+        clue4("clue4","Clue you found"),
+        clue5("clue5","Clue you found"),
+        clue6("clue6","Clue you found");
+        
+        private final String name;
+        private final String description;
+        BackpackItem(String name, String description){
+         this.description=description;
+         this.name=name;
+        }
+         public String getDescription(){
+         return description;
+        }
     }
+    
 
     public String getItemName() {
         return itemName;
@@ -93,6 +119,5 @@ public class Item implements Serializable{
     public String toString() {
         return "Item{" + "itemName=" + itemName + ", description=" + description + ", content=" + content + '}';
     }
-    
-    
+
 }

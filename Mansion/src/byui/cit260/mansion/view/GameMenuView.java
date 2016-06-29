@@ -22,6 +22,7 @@ public class GameMenuView extends View {
               + "\nH - Help menu"
               + "\nB - Show backpack"
               + "\nG - Guess the murderer"
+              + "\nW - Find Weapon"
               + "\nQ - Quit"
               + "\n------------------------------------------------------------");
     }
@@ -57,6 +58,9 @@ public class GameMenuView extends View {
                 break;
             case "G":
                 this.guessMurderer();
+                break;
+            case "W":
+                this.findItem();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -106,5 +110,8 @@ public class GameMenuView extends View {
         GuessMurdererView guessmurderer=new GuessMurdererView();
         guessmurderer.display();
     }
-
+    private void findItem() {
+        FindItemView finditem=new FindItemView();
+        finditem.display();
+    }
 }
