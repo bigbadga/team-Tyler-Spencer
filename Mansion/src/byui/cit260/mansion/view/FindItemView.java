@@ -28,15 +28,16 @@ public class FindItemView extends View{
         BackpackItem[]items= BackpackItem.values();
         for (BackpackItem item : items) {
         if (item.name().equalsIgnoreCase(value)){
-            System.out.println(indexof(item));
+            System.out.println(item.ordinal());
             
         }
-        return false;
+       else {
+          System.out.println("Invalid input, please try again or enter Q to quit.");
+        }
+        return true;
         }
    return false;
     }
 
-    private boolean indexof(BackpackItem item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

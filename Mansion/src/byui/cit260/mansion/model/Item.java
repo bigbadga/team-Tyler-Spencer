@@ -44,8 +44,15 @@ public class Item implements Serializable {
          this.description=description;
          this.name=name;
         }
+        public String getName(){
+         return name;
+        }
          public String getDescription(){
          return description;
+        }
+
+        public boolean getValue() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
     
