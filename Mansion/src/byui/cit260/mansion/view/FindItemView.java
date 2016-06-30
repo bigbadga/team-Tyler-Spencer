@@ -29,7 +29,7 @@ public class FindItemView extends View{
         for (BackpackItem item : items) {
         if (value.equals(item.name())){
             
-            System.out.println(item.ordinal());
+            System.out.println("This is the index of the item you are looking for: "+item.ordinal());
             
         //}
        //else {
