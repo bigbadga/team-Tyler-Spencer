@@ -29,6 +29,7 @@ public class Map implements Serializable{
         Map.locations = new Location[noOfRows][noOfColumns];
         
         for (int row = 0; row < noOfRows; row++) {
+            Character detective = new Character();
             for(int column = 0; column < noOfColumns; column++) {
                 // create and initialize new Location object instance
                 Location location = new Location();
@@ -38,6 +39,7 @@ public class Map implements Serializable{
                 
                 // assign the Location object to the current position in array
                 locations[row][column] = location;
+                
             }
         }
     }

@@ -92,5 +92,4 @@ public class Character implements Serializable {
         return "Character{" + "name=" + name + ", description=" + description + ", columnCoordinate=" + columnCoordinate + ", rowCoordinate=" + rowCoordinate + '}';
     }
 
-    
 }

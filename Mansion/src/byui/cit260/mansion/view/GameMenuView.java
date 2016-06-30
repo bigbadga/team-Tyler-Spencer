@@ -91,23 +91,24 @@ public class GameMenuView extends View {
 
     private void displayMap(Location[][] map) {
         // get the map locations for the current game
-        System.out.println("\n*** Mansion Map ***");
-        //System.out.println("\n 1    2     3    4    5");
-        for (Location[] map1 : map) {
-            System.out.println("----- ----- ----- ----- ----- ");
-            System.out.println(Location.getRow());
-            for (Location[] map2 : map) {
-                System.out.println("|");
+        System.out.println("\n\t*** Mansion Map ***");
+        System.out.println("\n   1     2    3    4    5");
+        for (int i = 0; i < map.length; i++) {
+            System.out.println("  ---- ---- ---- ---- ---- ");
+            System.out.print(i + 1 + "|");
+            for (int j = 0; j < map.length; j++) {
+                Location[][] locations = Map.getLocations();
                 if (Location.getVisited() == true){
-                    // String symbol = Scene.getMapSymbol();
-                    System.out.println(Scene.getMapSymbol());
+                    System.out.print(Scene.getMapSymbol());
                 } else {
-                    System.out.println(" ?? ");
+                    System.out.print(" ?? ");
                 }
-                System.out.println("|");
+                System.out.print("|");
             }
-            System.out.println("----- ----- ----- ----- ----- ");
+            System.out.println(" ");
+            
         }
+        System.out.println("  ---- ---- ---- ---- ---- ");
     }
 
     private void saveGame() {
@@ -128,5 +129,4 @@ public class GameMenuView extends View {
         GuessMurdererView guessmurderer=new GuessMurdererView();
         guessmurderer.display();
     }
-
 }
