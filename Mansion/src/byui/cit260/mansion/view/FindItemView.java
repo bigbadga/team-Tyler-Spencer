@@ -15,7 +15,7 @@ import static java.util.Collections.list;
  */
 public class FindItemView extends View{
     public FindItemView(){
-           super("Which weapon are you looking for? Enter the name of the weapon below. (ei. knife)"
+           super("Which weapon are you looking for? Enter the name of the weapon below. (ei. knife) Enter Q to quit."
                 
            
            );
@@ -24,20 +24,31 @@ public class FindItemView extends View{
     @Override
     public boolean doAction(String value) {
     
-        value=value.toUpperCase();
+       
         BackpackItem[]items= BackpackItem.values();
         for (BackpackItem item : items) {
-        if (item.name().equalsIgnoreCase(value)){
+        if (value.equals(item.name())){
+            
             System.out.println(item.ordinal());
             
+        //}
+       //else {
+          //System.out.println("Invalid input, please try again or enter Q to quit.");
+        //}
+        //return false;
         }
-       else {
-          System.out.println("Invalid input, please try again or enter Q to quit.");
-        }
-        return true;
-        }
-   return false;
+  //return false;
+   }
+        return false;
+}
+
+    private boolean indexOf(BackpackItem item) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+        
+}
+
+   
 
     
-}
+

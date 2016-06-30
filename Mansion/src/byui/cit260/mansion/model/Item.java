@@ -20,11 +20,11 @@ public class Item implements Serializable {
     }
 
     public enum BackpackItem {
-
+        hammer("hammer", "This hammer can be use to fix things."),
         gun("gun", "Useful weapon, but can be dangerous."),
-        hammer("hammer","This hammer can be use to fix things."),
-        knife("knife","this might be the weapon that the murderer used to kill the victim."),
-        file1("file1","Suspect's file"),
+        
+        knife("knife", "this might be the weapon that the murderer used to kill the victim."),
+        file1("file1", "Suspect's file"),
         file2("file2","Suspect's file"),
         file3("file3","Suspect's file"),
         file4("file4","Suspect's file"),
@@ -52,6 +52,10 @@ public class Item implements Serializable {
         }
 
         public boolean getValue() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public boolean equalsIgnoreCase(String value) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
