@@ -1,5 +1,9 @@
 package byui.cit260.mansion.view;
 
+import byui.cit260.mansion.model.Location;
+import byui.cit260.mansion.model.Scene;
+import byui.cit260.mansion.model.Map;
+
 /**
  *
  * @author tylerbadger
@@ -7,6 +11,7 @@ package byui.cit260.mansion.view;
 public class GameMenuView extends View {
     
     private String gameMenu;
+    private Location[][] map = Map.getLocations();
     
     public GameMenuView(){
         super("\n"
@@ -45,7 +50,7 @@ public class GameMenuView extends View {
                 this.obtainObjects();
                 break;
             case "M":
-                this.displayMap();
+                this.displayMap(map);
                 break;
             case "S":
                 this.saveGame();
@@ -88,8 +93,26 @@ public class GameMenuView extends View {
         System.out.println("\n*** obtainObjects() called ***");
     }
 
-    private void displayMap() {
-        System.out.println("\n*** displayMap() called ***");
+    private void displayMap(Location[][] map) {
+        // get the map locations for the current game
+        System.out.println("\n\t*** Mansion Map ***");
+        System.out.println("\n   1     2    3    4    5");
+        for (int i = 0; i < map.length; i++) {
+            System.out.println("  ---- ---- ---- ---- ---- ");
+            System.out.print(i + 1 + "|");
+            for (int j = 0; j < map.length; j++) {
+                Location[][] locations = Map.getLocations();
+                if (Location.getVisited() == true){
+                    System.out.print(Scene.getMapSymbol());
+                } else {
+                    System.out.print(" ?? ");
+                }
+                System.out.print("|");
+            }
+            System.out.println(" ");
+            
+        }
+        System.out.println("  ---- ---- ---- ---- ---- ");
     }
 
     private void saveGame() {
@@ -110,8 +133,12 @@ public class GameMenuView extends View {
         GuessMurdererView guessmurderer=new GuessMurdererView();
         guessmurderer.display();
     }
+
     private void findItem() {
         FindItemView finditem=new FindItemView();
         finditem.display();
     }
 }
+
+
+

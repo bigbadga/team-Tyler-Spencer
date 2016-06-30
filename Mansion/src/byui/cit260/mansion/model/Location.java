@@ -9,12 +9,10 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     private String description;
-    private Integer row;
+    private static Integer row;
     private Integer column;
-
     private Character character;
-
-    private boolean visited;
+    private static boolean visited;
     private Scene scene;
 
 
@@ -29,12 +27,12 @@ public class Location implements Serializable{
         this.description = description;
     }
 
-    public Integer getRow() {
+    public static Integer getRow() {
         return row;
     }
 
     public void setRow(Integer row) {
-        this.row = row;
+        Location.row = row;
     }
 
     public Integer getColumn() {
@@ -54,13 +52,12 @@ public class Location implements Serializable{
         this.character = character;
     }
 
-
-    public boolean isVisited() {
+    public static boolean getVisited() {
         return visited;
     }
 
     public void setVisited(boolean visited) {
-        this.visited = visited;
+        Location.visited = visited;
     }
 
     public Scene getScene() {

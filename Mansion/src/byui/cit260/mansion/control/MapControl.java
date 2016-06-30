@@ -4,6 +4,7 @@ import byui.cit260.mansion.model.Location;
 import byui.cit260.mansion.model.Map;
 import byui.cit260.mansion.model.Scene;
 import byui.cit260.mansion.model.Scene.SceneType;
+import byui.cit260.mansion.model.Character;
 
 /**
  *
@@ -25,9 +26,8 @@ class MapControl {
     }
     
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
+        Location[][] locations = Map.getLocations();
         
-        // start point
         locations[0][0].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.hallway.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.frontDoor.ordinal()]);
@@ -61,7 +61,7 @@ class MapControl {
         
         Scene frontDoor = new Scene();
         frontDoor.setDescription("Main entrance to enter this mansion.");
-        frontDoor.setMapSymbol(" ST ");
+        frontDoor.setMapSymbol(" E ");
         frontDoor.setBlockedRoom(false);
         frontDoor.setTravelTime(0);
         scenes[Scene.SceneType.frontDoor.ordinal()] = frontDoor;
@@ -100,7 +100,6 @@ class MapControl {
         theater.setBlockedRoom(false);
         theater.setTravelTime(0);
         scenes[Scene.SceneType.theater.ordinal()] = theater;
-        
         
         Scene gym = new Scene();
         gym.setDescription("It is right next to the bedroom. A path the murderer may have been.");
@@ -152,7 +151,7 @@ class MapControl {
         scenes[Scene.SceneType.library.ordinal()] = library;
         
         Scene secretRoom = new Scene();
-        secretRoom.setDescription("It is loacted at the corner of the mansion. You should look into it since it is called secret room.");
+        secretRoom.setDescription("It is located at the corner of the mansion. You should look into it since it is called secret room.");
         secretRoom.setMapSymbol(" SR ");
         secretRoom.setBlockedRoom(true);
         secretRoom.setTravelTime(0);
@@ -166,7 +165,7 @@ class MapControl {
         scenes[Scene.SceneType.garage.ordinal()] = garage;
         
         Scene garden = new Scene();
-        garden.setDescription("An indoor garden whith several kinds of plants. One of them is poiseness.");
+        garden.setDescription("An indoor garden whith several kinds of plants. One of them is poisonous.");
         garden.setMapSymbol(" GD ");
         garden.setBlockedRoom(false);
         garden.setTravelTime(0);
@@ -176,7 +175,11 @@ class MapControl {
         
     }
 
-    static void moveCharacterToStartingLocation(Map map) {
+    public static void moveCharacterToStartingLocation(Map map) {
+       Character detective = new Character();
+       
+       detective.setColumnCoordinate(2);
+       detective.setRowCoordinate(0);
     }
     
 }

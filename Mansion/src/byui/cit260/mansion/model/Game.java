@@ -85,8 +85,6 @@ public class Game implements Serializable{
         
     }
 
-    
-
     public Character getCharacter() {
         return character;
     }
@@ -94,8 +92,6 @@ public class Game implements Serializable{
     public void setCharacter(Character character) {
         this.character = character;
     }
-
-  
 
     @Override
     public int hashCode() {
