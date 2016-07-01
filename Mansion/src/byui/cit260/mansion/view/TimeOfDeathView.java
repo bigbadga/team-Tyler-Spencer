@@ -2,6 +2,7 @@ package byui.cit260.mansion.view;
 
 import java.util.Scanner;
 import byui.cit260.mansion.control.BackpackControl;
+import exception.BackpackControlException;
 
 /**
  *
@@ -34,17 +35,23 @@ public class TimeOfDeathView extends View{
         int time = Integer.parseInt(value);
         
         // call calcTimeOfDeath and pass the possible times of death
-        
+        try{
         boolean answer=BackpackControl.checkTime(20, 24, time);
-        // if age returned is negative
-        if (answer==true){ 
-        System.out.println("\n*** This is right, the time of death will now be stored in the victim files.***");
+         } catch(BackpackControlException msg){
+        System.out.println(msg.getMessage());
         
+        }finally{
+        System.out.close();
         }
-        else {
-        System.out.println("\n*** Please try again.***");
-        display();
-        }   
+        // if age returned is negative
+        //if (answer==true){ 
+        //System.out.println("\n*** This is right, the time of death will now be stored in the victim files.***");
+        
+       // }
+       // else {
+        //System.out.println("\n*** Please try again.***");
+        //display();
+        //}   
                 
         return true;
         

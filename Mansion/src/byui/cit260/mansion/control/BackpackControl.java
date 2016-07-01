@@ -1,39 +1,45 @@
 package byui.cit260.mansion.control;
 
+import exception.BackpackControlException;
+
 /**
  *
  * @author che11_000
  */
 public class BackpackControl {
 
-    public double calcAmountOfRain(double sumLY, double seasonRain) {
-
+    public double calcAmountOfRain(double sumLY, double seasonRain) throws BackpackControlException{
 //If input is invalid, then return error code and exit.
         if(sumLY <= 0 || sumLY > 200000){
-        return -1;
+        throw new BackpackControlException("The number is invalid  because sumLY is smaller than 0"
+                + "or sumLY is larger than 200000");
         }
         if(seasonRain <= 0 || seasonRain > 50000 ){
-        return -1;
+        throw new BackpackControlException("The number is invalid because seasonRain is smaller than 0"
+                + "or seasonRain is larger than 50000");
         }
         
         double HighestAmountOfRain = 120000 / sumLY * seasonRain;
         return HighestAmountOfRain;
+    
     }
     
-    public static int calcTimeOfDeath(int earliestTime, int latestTime) {
+    public static int calcTimeOfDeath(int earliestTime, int latestTime)throws BackpackControlException {
         
         if(earliestTime < 0 || earliestTime > 24){
-            return -1;
+            throw new BackpackControlException("The number is invalid  because ealiestTime is smaller than 0"
+                + "or earliestTime is larger than 24");
         }
         if(latestTime < 0 || latestTime > 24){
-            return -1;
+            throw new BackpackControlException("The number is invalid  because latestTime is smaller than 0"
+                + "or latestTime is larger than 24");
         }
         
         int hours = latestTime - earliestTime;
         return hours;
     }
     
-    public static boolean checkTime(int earliestTime, int latestTime, int guessedTime){
+    public static boolean checkTime(int earliestTime, int latestTime, int guessedTime)throws BackpackControlException{
         
         int calculatedTime = BackpackControl.calcTimeOfDeath(earliestTime, latestTime);
         
@@ -51,7 +57,7 @@ public class BackpackControl {
         }
     }
     
-    public static int calcAge ( int birthdayYear, int yearOfCountry){
+    public static int calcAge ( int birthdayYear, int yearOfCountry)throws BackpackControlException{
  
     //if input is invalid, then return error code and exit.
  
@@ -69,7 +75,7 @@ public class BackpackControl {
     return age;
     }
     
-    public static boolean checkAge(int birthdayYear,int yearOfCountry, long guessedAge) {
+    public static boolean checkAge(int birthdayYear,int yearOfCountry, long guessedAge)throws BackpackControlException {
         
         int calculatedAge =  BackpackControl.calcAge(birthdayYear, yearOfCountry);
         

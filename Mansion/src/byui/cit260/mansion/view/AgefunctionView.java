@@ -1,5 +1,6 @@
 package byui.cit260.mansion.view;
 import byui.cit260.mansion.control.BackpackControl;
+import exception.BackpackControlException;
 import java.util.Scanner;
 
 /**
@@ -34,23 +35,31 @@ public class AgefunctionView extends View{
         
         // call calcAge and pass the date and puntry years
         
-        
+        try{
         boolean answer=BackpackControl.checkAge(73, 1905, age );
-        // if age returned is negative
-        if (answer==true){ 
-        System.out.println("\n*** This is right, the age will now be stored in the suspect files.***");
+        } catch(BackpackControlException msg){
+        System.out.println(msg.getMessage());
         
+        }finally{
+        System.out.close();
         }
-        else {
-        System.out.println("\n*** Please try again.***");
+        // if age returned is negative
         
-        }   
+       // if (answer==true){ 
+        //System.out.println("\n*** This is right, the age will now be stored in the suspect files.***");
+        
+       // }
+        //else {
+        //System.out.println("\n*** Please try again.***");
+        
+        //}   
                 
         return true;
-        
     }
-   
 }
+    //}
+   
+
     
         
     

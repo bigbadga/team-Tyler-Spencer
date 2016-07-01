@@ -30,21 +30,19 @@ public class FindItemView extends View{
         if (value.equals(item.name())){
             
             System.out.println("This is the index of the item you are looking for: "+item.ordinal());
-            
-        //}
-       //else {
-          //System.out.println("Invalid input, please try again or enter Q to quit.");
-        //}
-        //return false;
+           
         }
-  //return false;
+       //else {
+       // System.out.println("Cannot find the item, please try again or enter Q to quit.");
+       //}
+        
+        
+  
    }
         return false;
 }
 
-    private boolean indexOf(BackpackItem item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
         
 }
 
