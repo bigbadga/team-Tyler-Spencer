@@ -28,6 +28,7 @@ public class GameMenuView extends View {
               + "\nB - Show backpack"
               + "\nG - Guess the murderer"
               + "\nW - Find Weapon"
+              + "\nF - Find Scene"
               + "\nQ - Quit"
               + "\n------------------------------------------------------------");
     }
@@ -66,6 +67,9 @@ public class GameMenuView extends View {
                 break;
             case "W":
                 this.findItem();
+                break;
+            case "F":
+                this.findScene();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -137,6 +141,11 @@ public class GameMenuView extends View {
     private void findItem() {
         FindItemView finditem=new FindItemView();
         finditem.display();
+    }
+    
+    private void findScene() {
+        FindSceneView findScene = new FindSceneView();
+        findScene.display();
     }
 }
 
