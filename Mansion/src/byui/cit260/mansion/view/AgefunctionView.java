@@ -37,8 +37,9 @@ public class AgefunctionView extends View{
         
         try{
         boolean answer=BackpackControl.checkAge(73, 1905, age );
-        } catch(BackpackControlException msg){
+        } catch(Throwable msg){
         System.out.println(msg.getMessage());
+        msg.printStackTrace();
         
         }finally{
         System.out.close();
