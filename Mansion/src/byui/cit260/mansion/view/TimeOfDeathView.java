@@ -2,7 +2,7 @@ package byui.cit260.mansion.view;
 
 import java.util.Scanner;
 import byui.cit260.mansion.control.BackpackControl;
-import exception.BackpackControlException;
+import byui.cit260.mansion.exceptions.BackpackControlException;
 
 /**
  *
