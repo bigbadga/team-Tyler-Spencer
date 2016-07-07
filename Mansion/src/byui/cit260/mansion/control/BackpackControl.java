@@ -1,6 +1,6 @@
 package byui.cit260.mansion.control;
 
-import exception.BackpackControlException;
+import byui.cit260.mansion.exceptions.BackpackControlException;
 
 /**
  *
@@ -61,17 +61,17 @@ public class BackpackControl {
  
     //if input is invalid, then return error code and exit.
  
-    if (birthdayYear <1 || birthdayYear>100){
-    return -1;
+    if (birthdayYear < 1 || birthdayYear > 100){
+        throw new BackpackControlException("The year must be between 1 and 100.");
     }
-    if (yearOfCountry <1900 || yearOfCountry>2010){
-    return -1;
+    if (yearOfCountry < 1900 || yearOfCountry > 2010){
+        throw new BackpackControlException("The year must be between 1900 and 2010.");
     }
  
-    if (yearOfCountry+birthdayYear>2016){
-    return -1;
+    if (yearOfCountry + birthdayYear > 2016){
+        throw new BackpackControlException("The year or birthday year is invalid.");
     }
-    int age= 2016-(birthdayYear+ yearOfCountry);
+    int age= 2016 - (birthdayYear + yearOfCountry);
     return age;
     }
     
