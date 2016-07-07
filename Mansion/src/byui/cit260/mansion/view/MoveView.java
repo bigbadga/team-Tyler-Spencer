@@ -45,8 +45,9 @@ public class MoveView extends View {
                 + "\nPlease enter a number between 1 to 10.";
 
         String num2 = this.getInput();
-        int num3 = Integer.parseInt(num2);
-        if (num3 > 0 && num3<11) {
+        try {
+            int num3 = Integer.parseInt(num2);
+            if (num3 > 0 && num3<11) {
             displayMessage="\n*** You are at a new position***"
                     +"\nEnter another direction if you want to move again."
                     +"\nOr enter Q to exit.";
@@ -55,6 +56,11 @@ public class MoveView extends View {
             System.out.println("\n*** Invalid Number *** Try again(1-10)");
             this.moveSpace();
         }
+        } catch (NumberFormatException nfe) {
+            System.out.println("NumberFormatException: " + nfe.getMessage());
+        }
+        
+        
     }
 
 }

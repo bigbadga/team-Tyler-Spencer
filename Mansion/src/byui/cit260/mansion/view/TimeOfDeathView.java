@@ -31,11 +31,9 @@ public class TimeOfDeathView extends View{
 
     public boolean doAction(String value) {
         //convert choice to integer
-        
-        int time = Integer.parseInt(value);
-        
-        // call calcTimeOfDeath and pass the possible times of death
-        try{
+        try {
+            int time = Integer.parseInt(value);
+            try{
         boolean answer=BackpackControl.checkTime(20, 24, time);
          } catch(BackpackControlException msg){
         System.out.println(msg.getMessage());
@@ -43,6 +41,13 @@ public class TimeOfDeathView extends View{
         }finally{
         System.out.close();
         }
+        } catch (NumberFormatException nfe) {
+            System.out.println("NumberFormatException: " + nfe.getMessage());
+        }
+        
+        
+        // call calcTimeOfDeath and pass the possible times of death
+        
         // if age returned is negative
         //if (answer==true){ 
         //System.out.println("\n*** This is right, the time of death will now be stored in the victim files.***");
