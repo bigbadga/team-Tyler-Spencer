@@ -6,8 +6,6 @@ package byui.cit260.mansion.view;
  */
 public class MoveView extends View {
 
-       
-    
     public MoveView() {
         super("Where do you want to go? "
                 + "\nPlease enter a direction you want to move. (ei, west=W) "
@@ -17,20 +15,20 @@ public class MoveView extends View {
     @Override
     public boolean doAction(String value) {
 
-        value=value.toUpperCase();
-    switch(value){
-        case "W":
+        value = value.toUpperCase();
+        switch (value) {
+            case "W":
                 this.moveSpace();
                 break;
-                
+
             case "E":
                 this.moveSpace();
                 break;
-                
+
             case "N":
                 this.moveSpace();
                 break;
-               
+
             case "S":
 
             default:
@@ -46,12 +44,11 @@ public class MoveView extends View {
 
         String num2 = this.getInput();
         int num3 = Integer.parseInt(num2);
-        if (num3 > 0 && num3<11) {
-            displayMessage="\n*** You are at a new position***"
-                    +"\nEnter another direction if you want to move again."
-                    +"\nOr enter Q to exit.";
-        } 
-        else {
+        if (num3 > 0 && num3 < 11) {
+            displayMessage = "\n*** You are at a new position***"
+                    + "\nEnter another direction if you want to move again."
+                    + "\nOr enter Q to exit.";
+        } else {
             System.out.println("\n*** Invalid Number *** Try again(1-10)");
             this.moveSpace();
         }
