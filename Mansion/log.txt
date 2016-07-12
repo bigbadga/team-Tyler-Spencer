@@ -1,2 +1,0 @@
-byui.cit260.mansion.view.MainMenuView - You must enter a value.
-byui.cit260.mansion.view.MainMenuView - You must enter a value.
