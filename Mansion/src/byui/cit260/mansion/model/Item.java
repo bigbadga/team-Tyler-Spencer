@@ -20,9 +20,9 @@ public class Item implements Serializable {
     }
 
     public enum BackpackItem {
-        hammer("hammer", "This hammer can be use to fix things."),
-        gun("gun", "Useful weapon, but can be dangerous."),
-        knife("knife", "this might be the weapon that the murderer used to kill the victim."),
+        hammer("hammer", "Does Damage"),
+        gun("gun", "Can be dangerous"),
+        knife("knife", "This is the weapon"),
         file1("file1", "Suspect's file"),
         file2("file2","Suspect's file"),
         file3("file3","Suspect's file"),

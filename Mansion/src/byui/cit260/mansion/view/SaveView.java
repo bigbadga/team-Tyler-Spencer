@@ -8,6 +8,7 @@ package byui.cit260.mansion.view;
 import byui.cit260.mansion.model.Item.BackpackItem;
 
 import byui.cit260.mansion.model.Item;
+import static java.lang.System.out;
 
 /**
  *
@@ -23,11 +24,16 @@ public class SaveView extends View {
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        
-        if (value.equals ("Y")) {
-            BackpackItem[]items= BackpackItem.values();
+
+        if (value.equals("Y")) {
+            out.println("\n-----------------------Backpack items-----------------------");
+            out.printf("%n%-20s%5s%20s", "ItemName", "IndexNumber", "Description");
+            out.printf("%n%-20s%5s%20s", "--------", "-----------", "-----------");
+
+            BackpackItem[] items = BackpackItem.values();
             for (Item.BackpackItem item : items) {
-            System.out.println(item.name()+", "+item.ordinal());
+                out.printf("%n%-20s%5d%28s", item.name(), item.ordinal(), item.getDescription());
+                //out.println(item.name()+", "+item.ordinal());
             }
 
         }
