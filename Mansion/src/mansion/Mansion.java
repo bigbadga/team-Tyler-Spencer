@@ -54,7 +54,6 @@ public class Mansion {
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        return;
         
         } catch (Throwable e) {
             
