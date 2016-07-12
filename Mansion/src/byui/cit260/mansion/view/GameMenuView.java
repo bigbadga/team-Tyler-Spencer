@@ -131,7 +131,8 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() called ***");
+        SaveView saveView = new SaveView();
+        saveView.display();
     }
 
     private void helpMenu() {

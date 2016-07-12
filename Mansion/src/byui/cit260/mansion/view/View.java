@@ -32,7 +32,7 @@ public abstract class View implements ViewInterface {
         do {
             this.console.println(this.displayMessage); // display the prompt message
             value = this.getInput(); // get the user's selection
-            done = this.doAction(value); // do action based on selection
+            //done = this.doAction(value); // do action based on selection
             
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; //exit the game
